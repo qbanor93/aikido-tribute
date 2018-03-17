@@ -1,0 +1,798 @@
+@import "normalize";
+
+
+$white: #fff;
+$black: #000;
+$color-resalte: #be0d05;
+$gradient-home: rgba(0, 0, 0, 0.65);
+$skew-transf: skewY(15deg);
+
+$breakpoint-xl-mobile: 414px;
+$breakpoint-tab: 768px;
+$breakpoint-desktop: 1024px;
+
+$contain-width: 95%;
+$max-width-contain: 1024px;
+
+.wrap{
+  display: block;
+  width: 100%;
+  font-family: 'Rambla', sans-serif;
+}
+
+.home-container {
+  display: block;
+  width: 100%;
+  min-height: 75vh;
+  background-image: linear-gradient($gradient-home, $gradient-home), url(../img/home.jpg);
+  background-size: 400%;
+  background-position: center 15%;
+  background-repeat: no-repeat;
+}
+
+.main-nav {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  position: fixed;
+  background: $black;
+  z-index: 1000;
+
+  @media(min-width: $breakpoint-desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .logo-page {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+
+    background-image: url(../img/AIKIDO-logo.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 100px;
+
+    @media(min-width: $breakpoint-desktop) {
+      width: 150px;
+    }
+  }
+
+  .toggle-btn {
+    display: block;
+    position: absolute;
+    top: 45px;
+    right: 5%;
+    transform: translate(0%, 0%);
+
+    @media(min-width: $breakpoint-desktop) {
+      display: none;
+    }
+
+    svg, svg path {
+      display: block;
+      width: 32px;
+      height: 32px;
+      fill: $white;
+    }
+  }
+
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-family: 'Overpass', sans-serif;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.8);
+
+    position: absolute;
+    top: 120px;
+    left: 0%;
+    z-index: 10;
+
+    @media(min-width: $breakpoint-desktop) {
+      display: flex !important;
+      flex-direction: row;
+      position: initial;
+      top: inherit;
+      left: inherit;
+      max-width: 750px;
+    }
+
+    .nav-options {
+      display: block;
+      width: 100%;
+      font-size: 1.2em;
+      text-align: center;
+      // padding: 0.6em 0;
+
+      a {
+        display: block;
+        width: 100%;
+        text-decoration: none;
+        line-height: 1.2em;
+        color: $white;
+        width: 100%;
+        padding: 0.6em 0;
+
+        @media(min-width: $breakpoint-desktop) {
+          border-radius: 4px;
+        }
+
+        &:hover {
+          animation: hoverNav 0.4s 1 ease-in-out forwards;
+          // background: $color-resalte;
+        }
+      }
+
+    }
+  }
+
+}
+
+@keyframes hoverNav {
+  from {
+    background: $black;
+  }
+  to {
+    background: $color-resalte;
+  }
+}
+
+.aikido-symbol {
+  display: block;
+  width: 90%;
+  max-width: 768px;
+  margin: 0 auto;
+
+  background-image: url(../img/aikido.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 200px;
+
+  position: absolute;
+  top:18%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+  @media(min-width: $breakpoint-xl-mobile) {
+    padding-bottom: 250px;
+  }
+}
+
+h1 {
+  display: block;
+  width: 100%;
+  font-size: 2.6em;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: $color-resalte;
+
+  @media(min-width: $breakpoint-tab) {
+    font-size: 2.5em;
+  }
+
+  @media(min-width: $breakpoint-desktop) {
+    font-size: 3em;
+  }
+}
+
+.meaning-container {
+  display: block;
+  width: 100%;
+
+  background-color: $white;
+  transform: translate(0, -16%) skewY(-15deg);
+
+  @media(min-width: $breakpoint-tab) {
+    transform: translate(0, -22%) skewY(-15deg);
+  }
+
+  @media(min-width: $breakpoint-desktop) {
+    transform: translate(0, -20%) skewY(-10deg);
+  }
+
+  @media(min-width: 1470px) {
+    transform: translate(0, -18%) skewY(-6deg);
+  }
+
+  .contain-meaning-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: $contain-width;
+    max-width: $max-width-contain;
+    margin: 0 auto;
+
+    transform: translate(0, -5%) skewY(15deg);
+
+    @media(min-width: $breakpoint-tab) {
+      transform: translate(0, -5%) skewY(15deg);
+    }
+
+    @media(min-width: $breakpoint-desktop) {
+      transform: translate(0, -5%) skewY(10deg);
+    }
+
+    @media(min-width: 1470px) {
+      transform: translate(0, -5%) skewY(6deg);
+    }
+
+    // h1 {
+    //   display: block;
+    //   width: 100%;
+    //   font-size: 2.6em;
+    //   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    //   text-align: center;
+    //   color: $color-resalte;
+    //
+    //   @media(min-width: $breakpoint-tab) {
+    //     font-size: 2.5em;
+    //   }
+    //
+    //   @media(min-width: $breakpoint-desktop) {
+    //     font-size: 3em;
+    //   }
+    // }
+
+    .meaning-block {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 0 0 4em;
+
+      @media(min-width: $breakpoint-xl-mobile) {
+        padding: 0 0 6em;
+      }
+
+      @media(min-width: $breakpoint-tab) {
+        padding: 0 0 9em;
+      }
+
+      @media(min-width: $breakpoint-desktop) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .meaning-text {
+        display: block;
+        width: 100%;
+        font-family: 'Overpass', sans-serif;
+        text-align: justify;
+        color: $black;
+
+        @media(min-width: $breakpoint-desktop) {
+          width: 50%;
+        }
+
+        p{
+          font-size: 1.15em;
+
+          @media(min-width: $breakpoint-tab) {
+            font-size: 1.05em;
+          }
+        }
+      }
+
+      .meaning-pic{
+        display: block;
+        width:100%;
+        border-radius: 5px;
+
+        background-image: url(../img/meaning.jpg);
+        background-size: cover;
+        background-position: top center;
+        background-repeat: no-repeat;
+        padding-bottom: 200px;
+
+        @media(min-width: $breakpoint-xl-mobile) {
+          padding-bottom: 350px;
+        }
+
+        @media(min-width: $breakpoint-tab) {
+          padding-bottom: 350px;
+        }
+
+        @media(min-width: $breakpoint-desktop) {
+          width: 45%;
+        }
+      }
+    }
+  }
+}
+
+.first-letter-apply {
+  &::first-letter{
+    font-size: 2em;
+    color: $color-resalte;
+    font-weight: bold;
+  }
+}
+
+
+
+.history-container {
+  display: block;
+  width: 100%;
+  // min-height: 75vh;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../img/history-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: translate(0, -20%);
+  padding-bottom: 2em;
+  // margin-bottom: -35%;
+
+  @media(min-width: $breakpoint-tab) {
+    transform: translate(0, -30%);
+  }
+
+  // @media(min-width: $breakpoint-desktop) {
+  //   transform: translate(0, -35%);
+  // }
+
+  .contain-history-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: $contain-width;
+    max-width: $max-width-contain;
+    margin: 0 auto;
+  }
+
+  .meaning-block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @media(min-width: $breakpoint-desktop) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .meaning-text {
+      display: block;
+      width: 100%;
+      font-family: 'Overpass', sans-serif;
+      text-align: justify;
+      color: $white;
+
+      @media(min-width: $breakpoint-desktop) {
+        width: 30%;
+      }
+
+      p{
+        font-size: 1.15em;
+
+        @media(min-width: $breakpoint-tab) {
+          font-size: 1.05em;
+        }
+      }
+    }
+
+    .history-pic{
+      display: block;
+      width:100%;
+      border-radius: 5px;
+
+      background-image: url(../img/history.jpg);
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+      padding-bottom: 200px;
+
+      // @media(min-width: $breakpoint-xl-mobile) {
+      //   padding-bottom: 350px;
+      // }
+      //
+      // @media(min-width: $breakpoint-tab) {
+      //   padding-bottom: 350px;
+      // }
+      //
+      @media(min-width: $breakpoint-desktop) {
+        width: 30%;
+      }
+    }
+  }
+}
+
+.KI-container {
+  display: block;
+  width: 100%;
+  padding: 1em 0;
+  // min-height: 75vh;
+  margin-top: -100%;
+
+  @media(min-width: $breakpoint-xl-mobile) {
+    margin-top: -80%;
+  }
+
+  @media(min-width: $breakpoint-tab) {
+    margin-top: -40%;
+  }
+
+  @media(min-width: $breakpoint-desktop) {
+    margin-top: -30%;
+    padding: 2em 0;
+  }
+
+  @media(min-width: 1105px) {
+    margin-top: -25%;
+  }
+
+  @media(min-width: 1205px) {
+    margin-top: -23%;
+  }
+
+  @media(min-width: 1450px) {
+    margin-top: -20%;
+  }
+
+  .contain-ki-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: $contain-width;
+    max-width: $max-width-contain;
+    margin: 0 auto;
+  }
+
+  .meaning-block {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+
+    @media(min-width: $breakpoint-xl-mobile) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .meaning-text {
+      display: block;
+      width: 100%;
+      font-family: 'Overpass', sans-serif;
+      text-align: justify;
+      color: $black;
+
+      // @media(min-width: $breakpoint-desktop) {
+      //   width: 30%;
+      // }
+
+      p{
+        font-size: 1.15em;
+
+        @media(min-width: $breakpoint-tab) {
+          font-size: 1.05em;
+        }
+      }
+    }
+
+    .ki-pic, .ki-pic2 {
+      display: block;
+      width:100%;
+      border-radius: 5px;
+      margin: 0 auto;
+
+      background-image: url(../img/ki2.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 200px;
+
+      @media(min-width: $breakpoint-xl-mobile) {
+        height: 400px;
+      }
+
+      @media(min-width: $breakpoint-tab) {
+        width: 100%;
+      }
+
+      @media(min-width: $breakpoint-desktop) {
+        height: 450px;
+      }
+    }
+
+    .ki-pic {
+      background-image: url(../img/ki.jpg), linear-gradient($color-resalte, $color-resalte);
+      // background-image: url(../img/ki.jpg), linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
+      background-size: contain;
+      // background-position: center;
+      background-blend-mode: multiply;
+      width:100%;
+      max-width: 200px;
+      border-radius: 50%;
+      margin-bottom: 1em;
+
+      @media(min-width: $breakpoint-xl-mobile) {
+        height: 200px;
+      }
+
+      @media(min-width: $breakpoint-tab) {
+        height: 200px;
+        // margin-bottom: 0em;
+        border-radius: 100%;
+      }
+    }
+  }
+}
+
+.training-container {
+  display: block;
+  width: 100%;
+  // padding: 1em 0;
+  min-height: 75vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url(../img/training.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .contain-training-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: $contain-width;
+    max-width: $max-width-contain;
+    margin: 0 auto;
+  }
+
+  .meaning-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    @media(min-width: $breakpoint-desktop) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .meaning-text {
+      display: block;
+      width: 100%;
+      font-family: 'Overpass', sans-serif;
+      text-align: justify;
+      color: $white;
+
+      @media(min-width: $breakpoint-desktop) {
+        width: 30%;
+      }
+
+      p{
+        font-size: 1.15em;
+
+        @media(min-width: $breakpoint-tab) {
+          font-size: 1.05em;
+        }
+      }
+    }
+
+    .training-pic, .training-pic2{
+      display: block;
+      width:100%;
+      border-radius: 5px;
+
+      background-image: url(../img/training2.jpg);
+      background-size: cover;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      height: 200px;
+
+      @media(min-width: $breakpoint-tab) {
+        height: 400px;
+      }
+
+      @media(min-width: $breakpoint-desktop) {
+        width: 35%;
+        height: 560px;
+      }
+    }
+
+    .training-pic2{
+      background-image: url(../img/training.jpg);
+      background-position: center;
+      background-size: 130%;
+
+      @media(min-width: $breakpoint-desktop) {
+        display: none;
+      }
+    }
+  }
+}
+
+.rankings-container {
+  display: block;
+  width: 100%;
+  padding: 0 0 1em;
+  // min-height: 75vh;
+  background: $white;
+
+
+  .contain-rankings-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: $contain-width;
+    max-width: $max-width-contain;
+    margin: 0 auto;
+  }
+
+  .meaning-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    @media(min-width: $breakpoint-desktop) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .meaning-text{
+      display: block;
+      width: 100%;
+      font-family: 'Overpass', sans-serif;
+      text-align: justify;
+      color: $black;
+
+      // @media(min-width: $breakpoint-desktop) {
+      //   width: 30%;
+      // }
+
+      p{
+        font-size: 1.15em;
+
+        @media(min-width: $breakpoint-tab) {
+          font-size: 1.05em;
+        }
+      }
+    }
+
+    .rankings {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      @media(min-width: $breakpoint-xl-mobile) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      .level-aikido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 5% auto;
+        overflow: hidden;
+
+        border-radius: 10px;
+        background-color: $white;
+        box-shadow: 2px 2px 14px 8px rgba(0, 0, 0, 0.2);
+
+        @media(min-width: 580px) {
+          width: 45%;
+          min-height: 260px;
+        }
+
+        @media(min-width: $breakpoint-desktop) {
+          width: 30%;
+        }
+
+        h2 {
+          display: block;
+          width: 100%;
+          color: $white;
+          background: $color-resalte;
+          text-align: center;
+          margin: 0 auto 1em;
+          padding: 0.5em 0;
+        }
+
+        p {
+          display: block;
+          width: 90%;
+          color: $black;
+          text-align: justify;
+        }
+
+        div{
+          display: block;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin: 0 0 1em;
+        }
+
+      }
+
+      .level-aikido:nth-child(1) div {
+        background: #ffffff;
+        border: 4px solid #000000;
+      };
+
+      .level-aikido:nth-child(2) div {
+        background: #ffed00;
+        border: 4px solid #d8d8d8;
+      };
+
+      .level-aikido:nth-child(3) div {
+        background: #ffed00;
+        border: 4px solid #ffed00;
+      };
+
+      .level-aikido:nth-child(4) div {
+        background: orange;
+        border: 4px solid #ffed00;
+      };
+
+      .level-aikido:nth-child(5) div {
+        background: orange;
+        border: 4px solid orange;
+      };
+
+      .level-aikido:nth-child(6) div {
+        background: #14d814;
+        border: 4px solid orange;
+      };
+
+      .level-aikido:nth-child(7) div {
+        background: #14d814;
+        border: 4px solid #14d814;
+      };
+
+      .level-aikido:nth-child(8) div {
+        background: #0058ff;
+        border: 4px solid #14d814;
+      };
+
+      .level-aikido:nth-child(9) div {
+        background: #0058ff;
+        border: 4px solid #0058ff;
+      };
+
+      .level-aikido:nth-child(10) div {
+        background: #731010;
+        border: 4px solid #0058ff;
+      };
+
+      .level-aikido:nth-child(11) div {
+        background: #731010;
+        border: 4px solid #731010;
+      };
+
+      .level-aikido:nth-child(12) div,
+      .level-aikido:nth-child(14) div,
+      .level-aikido:nth-child(16) div {
+        background: $color-resalte;
+        border: 4px solid $black;
+      };
+
+      .level-aikido:nth-child(13) div,
+      .level-aikido:nth-child(15) div,
+      .level-aikido:nth-child(17) div,
+      .level-aikido:nth-child(18) div,
+      .level-aikido:nth-child(19) div,
+      .level-aikido:nth-child(20) div,
+      .level-aikido:nth-child(21) div,
+      .level-aikido:nth-child(22) div,
+      .level-aikido:nth-child(23) div {
+        background: $black;
+        border: 4px solid $black;
+      };
+
+    }
+  }
+
+}
